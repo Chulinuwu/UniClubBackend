@@ -15,6 +15,8 @@ dotenv.config({path:'./config/config.env'});
 connectDB();
 
 const auth =require('./routes/auth')
+const club = require('./routes/clubs')
+const activity = require('./routes/activities')
 
 const app=express();
 
@@ -56,4 +58,5 @@ app.use(hpp());
 app.use(cors());
 
 app.use('/api/v1/auth',auth)
-
+app.use('/api/v1/club', club)
+app.use('/api/v1/activity', activity)
